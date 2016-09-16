@@ -14,11 +14,7 @@ describe('routes ::: ping', function (){
     it('should returns pong', function (done){
       request(app)
         .get('/api/ping')
-        .expect(200, 'pong')
-        .end(function(err, res) {
-          if (err) done(err);
-          done();
-        });
+        .expect(200, 'pong', done);
     });
   });
 });

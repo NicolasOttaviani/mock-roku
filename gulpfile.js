@@ -1,6 +1,6 @@
 
 var gulp = require('gulp'),
-    jasmine = require('gulp-jasmine'),
+    mocha = require('gulp-mocha'),
     spawn = require('child_process').spawn,
     node;
 
@@ -25,8 +25,8 @@ gulp.task('serve', function() {
  * description: launch jasmine.
  */
 gulp.task('test', function() {
-  gulp.src(test)
-		  .pipe(jasmine());
+  gulp.src(test, {read: false})
+		  .pipe(mocha());
 });
 
 /**
